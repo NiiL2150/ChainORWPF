@@ -1,0 +1,55 @@
+﻿<Window x:Class="ChainORWPF.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChainORWPF.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="300" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="New username:"/>
+            <TextBox Text="{Binding NewNick, Mode=TwoWay}" Grid.Row="1"/>
+            <TextBlock Grid.Row="2" Text="New password:"/>
+            <TextBox Text="{Binding NewPass, Mode=TwoWay}" Grid.Row="3"/>
+            <Button Grid.Row="4" Content="Register" Command="{Binding AddCommand}"/>
+            <TextBlock Grid.Row="5" Text="New code:"/>
+            <TextBlock Grid.Row="6" Text="{Binding NewCode, Mode=TwoWay}"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Your username:"/>
+            <TextBox Text="{Binding OldNick, Mode=TwoWay}" Grid.Row="1"/>
+            <TextBlock Grid.Row="2" Text="Your password:"/>
+            <TextBox Text="{Binding OldPass, Mode=TwoWay}" Grid.Row="3"/>
+            <TextBlock Grid.Row="4" Text="Your code:"/>
+            <TextBox Grid.Row="5" Text="{Binding OldCode, Mode=TwoWay}"/>
+            <Button Grid.Row="6" Content="Log in" Command="{Binding LogInCommand}"/>
+        </Grid>
+    </Grid>
+</Window>
